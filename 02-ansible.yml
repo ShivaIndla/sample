@@ -1,0 +1,10 @@
+---
+- name: vars from yml file
+  hosts: localhost
+  become: true
+  vars_files:
+    - 03-users.yml
+  tasks:
+    - name: vars declaring from fil
+      ansible.builtin.debug:
+        msg: "Hi, we are learning {{course}} from {{trainer}}, duration is {{duration}}."
